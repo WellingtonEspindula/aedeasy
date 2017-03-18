@@ -52,7 +52,7 @@ if (!isset($_SESSION["logado"])) {
 
         <script src="../../assets/js/jquery.min.js"></script>
         <link href="../../assets/css/editor/external/google-code-prettify/prettify.css" rel="stylesheet">
-        <link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
+        <link href="../../assets/fonts/css/font-awesome.css" rel="stylesheet">
         <link href="../../assets/css/editor/index.css" rel="stylesheet">
         <link href="../../assets/css/select/select2.min.css" rel="stylesheet">
 

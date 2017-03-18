@@ -71,11 +71,13 @@ class EntradaDispositivo {
     }
 
     function getEntradasByDispositivo($iddispositivo) {
-        $sql = "SELECT ed.identrada_dispositivo, ed.condutividade, ed.ppm, ed.salinidade, ed.hora_entrada FROM entrada_dispositivo ed "
-                . "JOIN dispositivo d ON ed.dispositivo_iddispositivo = d.iddispositivo "
-                . "WHERE d.iddispositivo = :id "
-                . "ORDER BY ed.hora_entrada ASC "
-                . "LIMIT 10";
+        $sql = "SELECT * FROM ("
+                ."SELECT ed.identrada_dispositivo, ed.condutividade, ed.ppm, ed.salinidade, ed.hora_entrada FROM entrada_dispositivo ed "
+                ."JOIN dispositivo d ON ed.dispositivo_iddispositivo = d.iddispositivo "
+                ."WHERE d.iddispositivo = :id "
+                ."ORDER BY ed.hora_entrada DESC "
+                ."LIMIT 10 "
+                .") sub ORDER BY sub.hora_entrada ASC;";
         $p_sql = Conexao::getInstance()->prepare($sql);
         $p_sql->bindValue(":id", $iddispositivo);
         $p_sql->execute();

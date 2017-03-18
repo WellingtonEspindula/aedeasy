@@ -108,7 +108,7 @@ class RestServer
 	{
 		$this->url = $this->getPath();
 		$this->method = $this->getMethod();
-		$this->format = $this->getFormat();
+		$this->format = RestFormat::JSON;
 
 		if ($this->method == 'PUT' || $this->method == 'POST' || $this->method == 'PATCH') {
 			$this->data = $this->getData();
