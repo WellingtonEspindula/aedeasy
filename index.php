@@ -1,5 +1,8 @@
 <?php
-ini_set("display_errors", 1);
+
+// Iniatilize errors message to debug mode
+// ini_set("display_errors", 1);
+
 
 require_once 'model/Dispositivo.php';
 require_once 'model/EntradaDispositivo.php';
